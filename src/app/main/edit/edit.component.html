@@ -1,0 +1,77 @@
+<div class="edit">
+	<h1>Изменить товар</h1>
+
+	<div class="addCForm">
+		<div class="control-group">
+			<label class="control-label" for="name">Название товара</label>
+			<div class="controls">
+				<input type="text" id="name" autocomplete="off"  [(ngModel)]="productAdd.name">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="productCat">Категории товаров</label>
+			<div class="controls">
+				<select [(ngModel)]="productAdd.category">
+					<option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="price">Базовая цена (KZT)</label>
+			<div class="controls">
+				<input type="text" id="price" autocomplete="off"  [(ngModel)]="productAdd.price">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="weight">Вес товара (кг)</label>
+			<div class="controls">
+				<input type="text" id="weight" autocomplete="off"  [(ngModel)]="productAdd.weight">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="tags">Метки</label>
+			<div class="controls">
+				<input type="text" id="tags" autocomplete="off"  [(ngModel)]="productAdd.tags">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="available">Количество (шт.) доступных товаров</label>
+			<div class="controls">
+				<input type="text" id="available" autocomplete="off"  [(ngModel)]="productAdd.available">
+			</div>
+		</div>
+
+
+		<div class="control-group full-width">
+			<label class="control-label" for="price">Краткое Описание Товара</label>
+			<div class="controls">
+				<app-tinymce [(ngModel)]='productAdd.content'></app-tinymce>
+				<!-- <textarea name="" id="" [(ngModel)]="productAdd.content"></textarea> -->
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="control-group">
+			<label class="control-label" for="price"></label>
+			<div class="controls">
+				
+			</div>
+		</div>
+
+
+		<div class="control-group">
+			<label class="control-label" for="price"></label>
+			<div class="controls">
+				<div class="bottom-btns">
+					<div class="btn" routerLink="/main/all" style="border-color:inherit;background: transparent;color: #000">Отмена</div>
+					<div class="btn" (click)="changeProduct()">Обновить</div>
+				</div>
+				
+			</div>
+		</div>		
+	</div>
+</div>

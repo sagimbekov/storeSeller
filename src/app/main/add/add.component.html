@@ -1,0 +1,12 @@
+<div class="add">
+	<h1>Добавить новый товар</h1>
+	
+	<div class="addCForm">
+		<input type="text" placeholder="Название товара" [(ngModel)]="productAdd.name">
+		<select [(ngModel)]="productAdd.category">
+			<option value="0" disabled="">Категории товаров</option>
+			<option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+		</select>
+		<div class="btn" (click)="addProduct()">Добавить</div>
+	</div>
+</div>

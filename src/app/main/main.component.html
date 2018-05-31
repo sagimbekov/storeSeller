@@ -1,0 +1,39 @@
+<section class="header">
+	<div class="container-full">
+		<div class="logo">
+			<b>KHOREX</b> | <span>Для продавцов </span>
+		</div>
+		<div class="header-nav">
+			Привет, {{this.app.getUser().name}}
+			<span class="logout" (click)="logout()">выйти</span>
+		</div>
+	</div>
+</section>
+
+<section class="left-nav">
+	<div class="container-full">
+		<ul>
+			<li>
+				<div class="parent-nav"><img src="assets/img/shop.svg" alt=""> Товары</div>
+			</li>
+			<li class="child" routerLink="/main/all" routerLinkActive="active">
+				<div>Все товары</div>
+			</li>
+			<li class="child" routerLink="/main/add" routerLinkActive="active">
+				<div>Добавить новый</div>
+			</li>
+			<li>
+				<div class="parent-nav"><img src="assets/img/order.svg" alt=""> Заказы</div>
+			</li>
+			<li class="child" routerLink="/main/orders" routerLinkActive="active">
+				<div>Все заказы</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="body">
+	<div class="container-full">
+		<router-outlet></router-outlet>
+	</div>
+</section>

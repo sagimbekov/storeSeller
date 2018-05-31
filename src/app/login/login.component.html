@@ -1,0 +1,24 @@
+<section class="login">
+  <div class="container">
+    <div class="login-left">
+      <div class="login-top">
+        <h2>Вход</h2>
+      </div>
+      <div class="login-bottom">
+        <form #form="ngForm" (ngSubmit)="onLoginForm()">
+          <div class="form-g">
+            <p>Имя пользователя или Email адрес:</p>
+            <input type="username" name="username" required #username="ngModel" [(ngModel)]="user.username">
+          </div>
+          <div class="form-g">
+            <p>Придумайте пароль</p>
+            <input type="password" name="pass" required #pass="ngModel" [(ngModel)]="user.password">
+          </div>
+
+          <button type="submit">Войти</button>
+          <p class="login-bottoml"><a routerLink="/register">Зарегистрироваться!</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
