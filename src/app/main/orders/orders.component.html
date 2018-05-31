@@ -5,25 +5,15 @@
 		<thead>
 			<tr>
 				<td>Имя</td>
-				<td>Категории</td>
-				<td>Метки</td>
-				<td>Цена</td>
-				<td>Вес</td>
-				<td>Куплено</td>
 				<td>Количество (шт.)</td>
-				<td></td>
+				<td>Цена</td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let order of orders">
-				<td>{{product.name}}</td>
-				<td>{{product.category.name}}</td>
-				<td>{{product.tags}}</td>
-				<td>{{product.price}} тг</td>
-				<td>{{product.weight}} кг</td>
-				<td>0</td>
-				<td>{{product.available}}</td>
-				<td><span routerLink="/main/edit/{{product.id}}">Изменить</span></td>
+				<td>{{order.name}}</td>
+				<td>{{order.count}}</td>
+				<td>{{order.price}}</td>
 			</tr>
 		</tbody>
 	</table>
