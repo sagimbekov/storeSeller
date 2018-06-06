@@ -1,6 +1,11 @@
 <section class="header">
 	<div class="container-full">
-		<div class="logo">
+		<div class="logo" (click)="mobNav = !mobNav">
+			<div class="mob-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 			<b>KHOREX</b> | <span>Для продавцов </span>
 		</div>
 		<div class="header-nav">
@@ -10,9 +15,9 @@
 	</div>
 </section>
 
-<section class="left-nav">
+<section class="left-nav" [class.open]="mobNav">
 	<div class="container-full">
-		<ul>
+		<ul (click)="mobNav = false">
 			<li>
 				<div class="parent-nav"><img src="assets/img/shop.svg" alt=""> Товары</div>
 			</li>
@@ -31,6 +36,8 @@
 		</ul>
 	</div>
 </section>
+
+<div class="mobOverley" *ngIf="mobNav" (click)="mobNav = false"></div>
 
 <section class="body">
 	<div class="container-full">

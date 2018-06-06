@@ -4,7 +4,6 @@
 	<table>
 		<thead>
 			<tr>
-				<td><input type="checkbox"></td>
 				<td>Имя</td>
 				<td>Категории</td>
 				<td>Метки</td>
@@ -17,7 +16,6 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let product of allProducts">
-				<td><input type="checkbox"></td>
 				<td>{{product.name}}</td>
 				<td>{{product.category.name}}</td>
 				<td>{{product.tags}}</td>

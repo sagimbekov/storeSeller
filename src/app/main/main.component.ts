@@ -9,6 +9,8 @@ import {SellerService} from '../services/seller.service';
 })
 export class MainComponent implements OnInit {
 
+  mobNav = false;
+
 	constructor(private route: ActivatedRoute,
             private router: Router,
             public app: SellerService) {

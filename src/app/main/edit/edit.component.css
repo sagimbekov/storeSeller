@@ -96,3 +96,31 @@ input{
     border-radius: 5px;
     padding: 0 20px;
 }
+
+@media(max-width: 767px){
+	.container-full {
+	    width: 100%;
+	    overflow: auto;
+	    max-width: 100%;
+	}
+
+	.control-group {
+	    width: 100%;
+	    float: none;
+	    min-height: inherit;
+	}
+
+	.controls {
+	    margin: 0;
+	}
+
+	label.control-label {
+	    display: block;
+	    width: 100%;
+	    text-align: center;
+	    font-size: 16px;
+	}
+	.bottom-btns {
+	    display: block;
+	}
+}

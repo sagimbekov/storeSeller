@@ -36,3 +36,10 @@ span{
 	color: blue;
 	cursor: pointer;
 }
+
+@media (max-width: 767px){
+	.all {
+	    overflow-x: scroll;
+	    width: 100%;
+	}
+}

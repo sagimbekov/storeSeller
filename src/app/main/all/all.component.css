@@ -36,3 +36,42 @@ span{
 	color: blue;
 	cursor: pointer;
 }
+
+@media (max-width: 767px){
+	.all h1{
+		font-size: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	table td:first-child{
+		font-weight: 500;
+	}
+
+	table, tr, td{
+		display: block;
+	}
+
+	thead{
+		display: none;
+	}
+	table tr{
+		background: #fff;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+	}
+	table td{
+		border:none;
+		display: inline-block;
+	}
+
+	.btn{
+		max-width: 50%;
+		height: 40px;
+		overflow: hidden;
+		line-height: 40px;
+		padding: 0;
+		text-align: center;
+	}
+}

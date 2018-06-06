@@ -25,3 +25,10 @@ input, select{
 .btn{
 	margin: 0;
 }
+
+@media(max-width: 767px){
+	input, select{
+		width: 100%;
+		min-width: inherit;
+	}
+}

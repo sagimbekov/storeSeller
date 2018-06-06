@@ -72,3 +72,9 @@ button{
     color: #f5363e;
     cursor: pointer;
 }
+
+@media (max-width: 767px) {
+    .login-left{
+        width: 90%;   
+    }
+}
