@@ -15,7 +15,7 @@
             <input type="password" name="pass" required #pass="ngModel" [(ngModel)]="user.password">
           </div>
 
-          <button type="submit">Войти</button>
+          <button type="submit" [disabled]="form.form.invalid">Войти</button>
           <p class="login-bottoml"><a routerLink="/register">Зарегистрироваться!</a></p>
         </form>
       </div>

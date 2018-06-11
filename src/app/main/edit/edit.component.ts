@@ -39,6 +39,12 @@ export class EditComponent implements OnInit {
 
   changeProduct(){
     this.app.changeProduct(this.productAdd).subscribe(res => {
+      // console.log(res)
+    })
+  }
+
+  deleteProduct(){
+    this.app.deleteProduct(this.productId).subscribe(res => {
       console.log(res)
     })
   }

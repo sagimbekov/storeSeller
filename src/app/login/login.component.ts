@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import {SellerService} from '../services/seller.service';
+import {User} from '../_models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,14 @@ import {SellerService} from '../services/seller.service';
 })
 export class LoginComponent implements OnInit {
 
-	user = {
-		username: '', password: '',
-	};
 	showL = true;
+	private user: User;
+
 	constructor(private route: ActivatedRoute,
 	      		public app: SellerService,
-	      		public router: Router) {
+	      		public router: Router,
+	      		) {
+		this.user = new User;
 	}
 
 	ngOnInit() {
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   	onLoginForm(){
   		this.app.authenticate(this.user).subscribe(res => {
-  			if(res.data.token){
+  			if(res){
   				this.router.navigate(['/main']);
   			}
   		})

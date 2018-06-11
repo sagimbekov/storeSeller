@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, Response, RequestOptions, ResponseContentType} from '@angular/http';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {User} from '../_models/user.model';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -33,13 +34,13 @@ export class SellerService {
 	      	.catch(this.handleError);
 	}
 
-	authenticate(user: any): Observable<any> {
+	authenticate(user: User): Observable<User[]> {
 	    const headers = new Headers();
     	headers.append('Content-Type', 'application/json');
 	    return this.http
 	      	.post(this.API_URL+'/cabinet/sellers/authenticate/', user, 
 	        	{headers: headers})
-	      	.map(res => {
+	      	.map((res: Response) => {
 	      		const resp = res.json();
 	        	if (resp.data.token && resp.data.user) {
 		          window.localStorage.setItem('auth_key', resp.data.token);
@@ -155,6 +156,18 @@ export class SellerService {
 	      	.catch(this.handleError);
 	}
 
+	deleteProduct(id):Observable<any>{
+		const headers = new Headers();
+	    	headers.append('Content-Type', 'application/json');
+	    	headers.append('Authorization', "SellerToken " + this.getToken());
+	    return this.http
+	      	.delete(this.API_URL+'/store/products/'+id, 
+	        	{headers: headers})
+	      	.map(res => {
+	      		return res.json().data;
+	      	})
+	      	.catch(this.handleError);
+	}
 
 	saveProfile(profile): Observable<any> {
 	    const headers = new Headers();
