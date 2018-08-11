@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class SellerService {
 
-	API_URL = 'http://139.59.155.219:8000';
+	API_URL = "https://api.khorex.kz";
 
 	constructor(private http: Http,
               	private httpClient: HttpClient) {
@@ -117,6 +117,19 @@ export class SellerService {
 	      	.catch(this.handleError);
 	}
 
+	getCategoriesById(id):Observable<any>{
+	 	const headers = new Headers();
+    		  headers.append('Content-Type', 'application/json');
+    		  headers.append('Authorization', "SellerToken " + this.getToken());
+	    return this.http
+	      	.get(this.API_URL+'/store/categories/' + id, 
+	        	{headers: headers})
+	      	.map(res => {
+	      		return res.json().data;
+	      	})
+	      	.catch(this.handleError);
+	}
+
 	getOrderedItems():Observable<any>{
 	 	const headers = new Headers();
     		  headers.append('Content-Type', 'application/json');
@@ -164,7 +177,7 @@ export class SellerService {
 	      	.delete(this.API_URL+'/store/products/'+id, 
 	        	{headers: headers})
 	      	.map(res => {
-	      		return res.json().data;
+	      		return true;
 	      	})
 	      	.catch(this.handleError);
 	}

@@ -11,8 +11,18 @@
 		<div class="control-group">
 			<label class="control-label" for="productCat">Категории товаров</label>
 			<div class="controls">
-				<select [(ngModel)]="productAdd.category">
+				<!-- <select  (change)="onChange($event.target.value)">
+					<option value="0" disabled="">Категории товаров</option>
 					<option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+				</select>
+			
+				<select  *ngIf="selectedParent" (change)="onChangeParent($event.target.value)">
+					<option value="0" disabled="">Категории товаров</option>
+					<option *ngFor="let cat of selectedParent.childs" [value]="cat.id">{{cat.name}}</option>
+				</select> -->
+
+				<select *ngIf="productAdd.category">
+					<option value="0" disabled="">{{productAdd.category.name}}</option>
 				</select>
 			</div>
 		</div>

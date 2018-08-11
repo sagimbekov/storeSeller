@@ -21,9 +21,13 @@ export class EditComponent implements OnInit {
     available: null
   }
 
+  selectedParent;
+  selectedChild;
+
 
 	constructor(private route: ActivatedRoute,
-            public app: SellerService) {
+            public app: SellerService,
+            public router: Router,) {
   }
 
 
@@ -43,9 +47,21 @@ export class EditComponent implements OnInit {
     })
   }
 
+  onChange(id){
+    this.app.getCategoriesById(id).subscribe(res => {
+      this.selectedParent = res;
+    })
+  }
+
+  onChangeParent(id){
+    this.app.getCategoriesById(id).subscribe(res => {
+      this.selectedChild = res;
+    })
+  }
+  
   deleteProduct(){
     this.app.deleteProduct(this.productId).subscribe(res => {
-      console.log(res)
+      this.router.navigate(['/main']);
     })
   }
 

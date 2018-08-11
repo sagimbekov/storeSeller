@@ -10,7 +10,9 @@ import {SellerService} from '../../services/seller.service';
 export class AddComponent implements OnInit {
 
   categories;
-
+  selectedParent;
+  selectedChild;
+  
   productAdd = {
     name: "",
     category: 0
@@ -26,6 +28,18 @@ export class AddComponent implements OnInit {
      this.categories = res;
    })
 	}
+
+  onChange(id){
+    this.app.getCategoriesById(id).subscribe(res => {
+      this.selectedParent = res;
+    })
+  }
+
+  onChangeParent(id){
+    this.app.getCategoriesById(id).subscribe(res => {
+      this.selectedChild = res;
+    })
+  }
 
   addProduct(){
     if(this.productAdd.name && this.productAdd.category !== 0){
