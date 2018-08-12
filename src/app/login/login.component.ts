@@ -11,7 +11,7 @@ import {User} from '../_models/user.model';
 export class LoginComponent implements OnInit {
 
 	showL = true;
-	private user: User;
+	public user: User;
 
 	constructor(private route: ActivatedRoute,
 	      		public app: SellerService,

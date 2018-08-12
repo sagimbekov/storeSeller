@@ -21,7 +21,8 @@ export class EditComponent implements OnInit {
     content: null,
     seller: null,
     available: null,
-    attributes: []
+    attributes: [],
+    images: []
   }
 
   selectedParent;
@@ -44,6 +45,10 @@ export class EditComponent implements OnInit {
     this.productId = this.route.snapshot.params['id'];
     this.app.getProduct(this.productId).subscribe(res=>{
       this.productAdd = res;
+
+      for(let img of this.productAdd.images){
+          this.imgsSrc.push({'fileName': img.id, url : img.image})
+      }
 
       this.app.getCategoriesById(res.category.id).subscribe(res => {
         this.attributes = res.attributes;
@@ -93,7 +98,7 @@ export class EditComponent implements OnInit {
           let headers = new Headers();
           /** No need to include Content-Type in Angular 4 */
           // {'Auth-Token': this.auth.getToken()}
-          headers.append('Auth-Token', this.app.getToken());
+          headers.append('Authorization', "SellerToken " + this.app.getToken());
           headers.append('Accept', 'application/json');
           let options = new RequestOptions({ headers: headers });
           this.http.post(`https://api.khorex.kz/store/products/` + this.productId +  '/upload/' , formData, options)

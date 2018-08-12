@@ -55,7 +55,7 @@
 			</div>
 		</div>
 
-		<div class="clearfix">
+		<div class="clearfix" *ngIf="productAdd.images.length">
 			<h1>Изображение товара</h1>
 			<image-upload 	(change)="fileChange($event)"
 							[buttonCaption]="'Добавить фото'"

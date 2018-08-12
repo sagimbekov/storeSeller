@@ -12,7 +12,7 @@ import {User} from '../_models/user.model'
 export class MainComponent implements OnInit {
 
   mobNav = false;
-  private user: User;
+  public user: User;
 
 	constructor(private route: ActivatedRoute,
             private router: Router,
