@@ -671,3 +671,16 @@ template {
 .img-ul-container.img-ul-hr-inline-group {
     float: left;
 }
+
+body .ngn-alert.ngn-default.ngn-danger .ngn-close {
+    position: absolute;
+    right: 6px;
+    top: 0;
+    font-size: 25px;
+}
+
+body .ngn-content {
+    font-size: 14px!important;
+    vertical-align: middle!important;
+    display: block!important;
+}

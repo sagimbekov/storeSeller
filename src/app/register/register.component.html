@@ -9,14 +9,16 @@
           <div class="form-g">
             <p>Email адрес:</p>
             <input type="email" name="email" required #email="ngModel" [(ngModel)]="user.email">
+            <div class="error-text" *ngIf="this.errors.email">{{this.errors.email[0].message}}</div>
           </div>
           <div class="form-g">
             <p>Имя</p>
             <input type="text" name="name" required #name="ngModel" [(ngModel)]="user.name">
+            <div class="error-text" *ngIf="this.errors.name">{{this.errors.name[0].message}}</div>
           </div>
           <div class="form-g">
             <p>Придумайте пароль</p>
-            <input type="password" name="pass" required #pass="ngModel" [(ngModel)]="user.password">
+            <input type="password" name="pass" required #pass="ngModel" [(ngModel)]="user.password"><div class="error-text" *ngIf="this.errors.passowrd">{{this.errors.passowrd[0].message}}</div>
           </div>
 
           <div class="form-g">
@@ -24,7 +26,7 @@
             <input type="code" name="code" required #code="ngModel" [(ngModel)]="user.code">
           </div>
 
-          <button type="submit">Регистрация</button>
+          <button type="submit"  [disabled]="form.form.invalid">Регистрация</button>
           <p class="login-bottoml">Уже зарегистрированы? <a routerLink="/login">Войти</a></p>
         </form>
       </div>

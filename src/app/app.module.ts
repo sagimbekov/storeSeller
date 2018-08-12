@@ -17,6 +17,8 @@ import { EditComponent } from './main/edit/edit.component';
 import { TinymceModule } from 'angular4-tinymce-biznet';
 import { ImageUploadModule } from "angular2-image-upload";
 
+import { Ng4AlertModule } from 'ng4-alert';
+
 const appRoutes: Routes = [
 	{path: '', component: RegisterComponent},
 	{path: 'login', component: LoginComponent},
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
 	    ReactiveFormsModule,
 	    HttpClientModule,
 	    HttpModule,
+	    Ng4AlertModule.forRoot(),
 	    TinymceModule.withConfig({
 	    	language: 'ru'
 	    }),

@@ -6,11 +6,11 @@
 			<tr>
 				<td>Имя</td>
 				<td>Категории</td>
-				<td>Метки</td>
 				<td>Цена</td>
 				<td>Вес</td>
 				<td>Куплено</td>
 				<td>Количество (шт.)</td>
+				<td>Статус</td>
 				<td></td>
 			</tr>
 		</thead>
@@ -18,11 +18,13 @@
 			<tr *ngFor="let product of allProducts">
 				<td>{{product.name}}</td>
 				<td>{{product.category.name}}</td>
-				<td>{{product.tags}}</td>
 				<td>{{product.price}} тг</td>
 				<td>{{product.weight}} кг</td>
 				<td>0</td>
 				<td>{{product.available}}</td>
+				<td>
+					<b *ngIf="product.status === 'draft'">Черновик</b>
+				</td>
 				<td><span routerLink="/main/edit/{{product.id}}">Изменить</span></td>
 			</tr>
 		</tbody>

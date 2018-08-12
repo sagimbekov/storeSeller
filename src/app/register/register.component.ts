@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import {SellerService} from '../services/seller.service';
+import { Ng4AlertService } from 'ng4-alert';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +14,25 @@ export class RegisterComponent implements OnInit {
 		email: '', password: '', name: '', code: '789'
 	};
 
+	errors = {
+		email: '',
+		password: '',
+		name: ''
+	}
+
+	options = {
+        text:"Success !",
+        type:"fail",
+        autoDismis:true,
+        timeout:4000
+    }
+
+    objectKeys = Object.keys;
+
 	constructor(private route: ActivatedRoute,
 	      		public app: SellerService,
-	      		public router: Router) {
+	      		public router: Router,
+	      		private ng4:Ng4AlertService) {
 	}
 
 	ngOnInit() {
@@ -28,9 +45,17 @@ export class RegisterComponent implements OnInit {
 		if(this.user.code === "789"){
 		    this.app.register(this.user).subscribe(res => {
 		    	this.router.navigate(['/main']);
+		    }, error => {
+		    	for(let key of this.objectKeys(error)){
+		    		this.errors[key] = error[key];
+		    	}
 		    })
 		}else{
 	    	  
   		}
 	}
+
+	activate(){
+        this.ng4.ng4Activate(this.options);
+    }
 }
