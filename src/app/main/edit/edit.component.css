@@ -24,11 +24,38 @@ input, select, textarea{
 	border: 1px solid #ccc;
 }
 
-
+.clearfix{
+	position: relative;
+	overflow: hidden;
+	clear: both;
+}
 .btn{
 	margin: 0;
 }
+.attribute{
+	margin-bottom: 10px;
+}
+.atribute-block h2{
+	font-size: 18px;
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
 
+.attr-childs{
+	display: inline-block;
+	border: 1px solid #ccc;
+	padding: 3px 10px;
+	margin: 5px 10px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+.attr-childs.clicked {
+    background: #3bc4de;
+    color: #fff;
+    border-color: #0977ce;
+    text-shadow: 1px 1px #0e68af;
+}
 .bottom-btns{
 	display: flex;
 	justify-content: space-between;

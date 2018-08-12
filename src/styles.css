@@ -596,3 +596,78 @@ template {
 [hidden] {
   display: none;
 }
+
+
+.customClass {
+    background-color: #fff;
+    border-radius: 5px;
+    margin:5px;
+    text-align: center;
+}
+
+.customClass .img-ul-upload {
+    background-color: #3bc4de !important;
+    display: block;
+    text-transform: none !important;
+    padding: 10px 30px !important;
+    border-radius: 5px !important;
+    float: none!important;
+}
+
+.customClass .img-ul-clear {
+    background-color: red !important;
+    display: none!important;
+}
+
+.customClass .img-ul-drag-box-msg {
+    display: block !important;
+    max-width: 200px;
+    line-height: 1;
+    margin: 0 auto!important;
+    font-weight: 400!important;
+    padding-top: 5px!important;
+    font-size: 13px;
+}
+
+.customClass .img-ul-container {
+    background-color: #fff !important;
+}
+
+.img-ul-file-upload {
+    border: 1px dashed #3bc4de;
+    border-radius: 6px;
+    background: #f6f6f6;
+}
+
+.customClass .img-ul-x-mark {
+    background: #3bc4de!important;
+    border-radius: 50%!important;
+    opacity: 1!important;
+}
+
+.img-ul-close:before, .img-ul-close:after{
+    height:10px !important;
+    top:3px!important;
+    left: 1px;
+}
+
+.img-ul-image:first-child:before {
+    content: 'Главное фото';
+    font-size: 12px;
+    position: absolute;
+    left: 5px;
+    top: -20px;
+}
+
+.img-ul-container {
+    padding-top: 20px!important;
+}
+
+
+.img-ul-image {
+    border-radius: 6px;
+}
+
+.img-ul-container.img-ul-hr-inline-group {
+    float: left;
+}

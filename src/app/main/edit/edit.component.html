@@ -55,6 +55,32 @@
 			</div>
 		</div>
 
+		<div class="clearfix">
+			<h1>Изображение товара</h1>
+			<image-upload 	(change)="fileChange($event)"
+							[buttonCaption]="'Добавить фото'"
+							[dropBoxMessage]="'Или просто претяните фотографии в эту олбласть'"
+							[class]="'customClass'"
+							[uploadedFiles]="imgsSrc"
+							[clearButtonCaption]="'Удалить все'"
+							(removed)="onRemoved($event)">
+			</image-upload>
+		</div>
+
+		<div class="clearfix">
+			<hr>
+			<div class="atribute-block">
+				<h1>Атрибуты</h1>
+				<div class="attribute" *ngFor="let item of attributes">
+					<h2>{{item.name}}:</h2>
+					<div class="attr-childs" *ngFor="let attr of item.items" (click)="toggleAttr(attr.id)" [class.clicked]="this.productAdd.attributes.indexOf(attr.id) !== -1">
+						{{attr.name}}
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+
 
 		<div class="control-group full-width">
 			<label class="control-label" for="price">Краткое Описание Товара</label>

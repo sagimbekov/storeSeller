@@ -15,6 +15,7 @@ import { AddComponent } from './main/add/add.component';
 import { OrdersComponent } from './main/orders/orders.component';
 import { EditComponent } from './main/edit/edit.component';
 import { TinymceModule } from 'angular4-tinymce-biznet';
+import { ImageUploadModule } from "angular2-image-upload";
 
 const appRoutes: Routes = [
 	{path: '', component: RegisterComponent},
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
 	imports: [
 	    BrowserModule,
 	    FormsModule,
+	    ImageUploadModule.forRoot(),
 	    ReactiveFormsModule,
 	    HttpClientModule,
 	    HttpModule,

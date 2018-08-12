@@ -64,6 +64,20 @@ export class SellerService {
 	      	.catch(this.handleError);
 	}
 
+	uploadImage(image,id): Observable<any> {
+	    const headers = new Headers();
+    	headers.append('Content-Type', 'application/json');
+    	headers.append('Authorization', "SellerToken " + this.getToken());
+	    return this.http
+	      	.post(this.API_URL+'/store/products/' + id + '/upload/', {image : image }, 
+	        	{headers: headers})
+	      	.map(res => {
+	      		return res;
+	      	})
+	      	.catch(this.handleError);
+	}
+
+	// 
 	
 	getProfile(): Observable<any> {
 	    const headers = new Headers();
